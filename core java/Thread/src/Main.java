@@ -1,7 +1,8 @@
 public class Main {
 	public static void main(String args[]) {
    Test1 test1 = new Test1(); 
-   Test2 test2 = new Test2(); 
+   Test2 runnable = new Test2();
+   Thread test2 =new Thread(runnable);
    //Interrupt Function
    test1.interrupt();
    test2.interrupt();
@@ -33,21 +34,6 @@ public class Main {
    System.out.println(test2.getState());
    //IsAlive Function
    System.out.println(test1.isAlive());
-   System.out.println(test2.isAlive());
-   //Wait Function
-   try {
-	test1.wait();
-} catch (InterruptedException e) {
-	// TODO Auto-generated catch block
-	e.printStackTrace();
-}
-
-   
-   
-   
-   
-   
-   
-   
-	}
+   System.out.println(test2.isAlive());  
+   	}
 }
